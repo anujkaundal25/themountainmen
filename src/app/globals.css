@@ -41,3 +41,13 @@ body {
 .animate-logo-slide:hover {
   animation-play-state: paused;
 }
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

@@ -1,6 +1,8 @@
 import AboutUs from "@/component/sections/AboutUs";
 import Client from "@/component/sections/Client";
+import Contact from "@/component/sections/Contact";
 import HeroSection from "@/component/sections/HeroSection";
+import Projects from "@/component/sections/Projects";
 import Services from "@/component/sections/Services";
 import Header from "@/component/ui/Header";
 import Image from "next/image";
@@ -13,6 +15,8 @@ export default function Home() {
     <AboutUs/>
     <Services/>
     <Client/>
+    <Projects/>
+    <Contact/>
     </>
   );
 }
