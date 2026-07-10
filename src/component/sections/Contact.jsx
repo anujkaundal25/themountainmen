@@ -1,106 +1,148 @@
 "use client";
 
 import React from 'react';
-// Importing Font Awesome icons from react-icons
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Form submitted");
   };
 
   return (
-    <section className="w-full min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section className="bg-white text-gray-800 py-24 px-4 md:px-8 lg:px-16 min-h-screen relative overflow-hidden" id='contact'>
+      
+      {/* Background Editorial Watermark */}
+
+      <div className="max-w-7xl mx-auto relative z-10 space-y-16">
         
-        {/* Section Heading */}
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Get In Touch</h2>
-          <p className="mt-4 text-lg text-gray-500">We'd love to hear from you. Please fill out the form or reach out directly.</p>
+        {/* Modern Minimalist Header */}
+        <div className="flex flex-col items-center text-center">
+          <span className="text-xs font-bold tracking-widest text-orange-600 uppercase mb-2">
+            Get In Touch
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
+            Let's Plan Your Next Shoot.
+          </h2>
+          <div className="w-12 h-0.5 bg-orange-500 mt-4" />
+          <p className="text-gray-500 mt-4 text-sm font-light max-w-md mx-auto leading-relaxed">
+            Have a project in mind or need assistance with logistics in Uttarakhand? Drop us a line or visit our production base.
+          </p>
         </div>
 
-        {/* --- TOP SECTION: 3 Info Cards --- */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Address Card */}
-          <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center border border-gray-100">
-            <div className="p-3 bg-indigo-50 rounded-full text-indigo-600 mb-4">
-              <FaMapMarkerAlt className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Our Location</h3>
-            <p className="mt-2 text-sm text-gray-600">A-25 Ekta Vihar, Mohakampur,Dehradun, Uttarakhand-248001</p>
-          </div>
-
-          {/* Phone Card */}
-          <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center border border-gray-100">
-            <div className="p-3 bg-indigo-50 rounded-full text-indigo-600 mb-4">
-              <FaPhoneAlt className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Phone Number</h3>
-            <p className="mt-2 text-sm text-gray-600">Tel : +91-9137443249 | +91-9897203153</p>
-            <p className="text-xs text-gray-400 mt-1">Mon-Fri from 9am to 6pm</p>
-          </div>
-
-          {/* Email Card */}
-          <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center border border-gray-100">
-            <div className="p-3 bg-indigo-50 rounded-full text-indigo-600 mb-4">
-              <FaEnvelope className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Email Address</h3>
-            <p className="mt-2 text-sm text-gray-600">Info@themountainmen.in</p>
-            <p className="text-xs text-gray-400 mt-1">We reply within 24 hours</p>
-          </div>
-        </div>
-
-        {/* --- BOTTOM SECTION: Split Layout (Form & Map) --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        {/* MAIN SPLIT STRUCTURAL CONTENT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Left Side: Contact Form */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                    <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                    <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea rows={4} required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition resize-none"></textarea>
-                </div>
-
-                <button type="submit" className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition shadow-sm">
-                  <FaPaperPlane className="w-4 h-4 mr-2" /> Send Message
-                </button>
-              </form>
+          {/* LEFT PANEL: INFO CARDS BOX (5 Columns) */}
+          <div className="lg:col-span-5 flex flex-col gap-4 justify-between">
+            
+            {/* Address Box */}
+            <div className="bg-gray-50 border border-gray-200 p-6 flex items-start gap-4 transition-all duration-300 hover:border-orange-500/50">
+              <div className="p-3 bg-orange-500 text-white text-base flex-shrink-0">
+                <FaMapMarkerAlt />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-900">Our Location</h3>
+                <p className="mt-2 text-xs md:text-sm text-gray-600 font-light leading-relaxed">
+                  A-25 Ekta Vihar, Mohakampur,<br />Dehradun, Uttarakhand-248001
+                </p>
+              </div>
             </div>
+
+            {/* Phone Box */}
+            <div className="bg-gray-50 border border-gray-200 p-6 flex items-start gap-4 transition-all duration-300 hover:border-orange-500/50">
+              <div className="p-3 bg-orange-500 text-white text-base flex-shrink-0">
+                <FaPhoneAlt />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-900">Phone Number</h3>
+                <p className="mt-2 text-xs md:text-sm text-gray-600 font-medium">
+                  +91-9137443249 <span className="text-gray-300">|</span> +91-9897203153
+                </p>
+              </div>
+            </div>
+
+            {/* Email Box */}
+            <div className="bg-gray-50 border border-gray-200 p-6 flex items-start gap-4 transition-all duration-300 hover:border-orange-500/50">
+              <div className="p-3 bg-orange-500 text-white text-base flex-shrink-0">
+                <FaEnvelope />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-900">Email Address</h3>
+                <p className="mt-2 text-xs md:text-sm text-gray-600 font-semibold hover:text-orange-600 transition-colors">
+                  Info@themountainmen.in
+                </p>
+              </div>
+            </div>
+
           </div>
 
-          {/* Right Side: Map Embed */}
-          <div className="w-full min-h-[350px] lg:min-h-full bg-gray-200 rounded-xl overflow-hidden shadow-sm border border-gray-100 relative">
-            <iframe 
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617539335911!2d-73.98682332342502!3d40.74844443538411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-              className="absolute top-0 left-0 w-full h-full border-0"
-              allowFullScreen={false} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          {/* RIGHT PANEL: SECURE MESSAGE FORM (7 Columns) */}
+          <div className="lg:col-span-7 bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <h3 className="text-lg font-bold tracking-wide text-gray-900 uppercase border-b border-gray-200 pb-3">
+                Send us a Message
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">First Name</label>
+                  <input 
+                    type="text" 
+                    required 
+                    className="w-full bg-white text-gray-900 px-4 py-3 border border-gray-200 focus:border-orange-500 focus:ring-0 outline-none transition text-sm font-light" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">Last Name</label>
+                  <input 
+                    type="text" 
+                    required 
+                    className="w-full bg-white text-gray-900 px-4 py-3 border border-gray-200 focus:border-orange-500 focus:ring-0 outline-none transition text-sm font-light" 
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">Email Address</label>
+                <input 
+                  type="email" 
+                  required 
+                  className="w-full bg-white text-gray-900 px-4 py-3 border border-gray-200 focus:border-orange-500 focus:ring-0 outline-none transition text-sm font-light" 
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">Message</label>
+                <textarea 
+                  rows={4} 
+                  required 
+                  className="w-full bg-white text-gray-900 px-4 py-3 border border-gray-200 focus:border-orange-500 focus:ring-0 outline-none transition text-sm font-light resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-orange-500 hover:bg-[#1a1c1e] cursor-pointer text-white font-bold text-xs uppercase tracking-widest transition shadow-md outline-none"
+              >
+                <FaPaperPlane className="text-[10px]" /> Dispatch Transmission
+              </button>
+            </form>
           </div>
 
+        </div>
+
+        {/* FULL WIDTH MAP ROW */}
+        <div className="w-full h-[350px] bg-gray-100 border border-gray-200 relative shadow-sm overflow-hidden group">
+          <div className="absolute inset-0 bg-orange-950/5 pointer-events-none group-hover:bg-transparent transition duration-500 z-10" />
+          <iframe
+            title="A-25 Ekta Vihar, Mohakampur, Dehradun Location"
+            src="https://www.google.com/maps?q=A-25%20Ekta%20Vihar%2C%20Mohakampur%2C%20Dehradun%2C%20Uttarakhand%20248001&output=embed"
+            className="absolute top-0 left-0 w-full h-full border-0 opacity-80 contrast-115 group-hover:opacity-100 group-hover:contrast-100 transition-all duration-700 ease-out"
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
 
       </div>

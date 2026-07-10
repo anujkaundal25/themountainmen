@@ -4,6 +4,7 @@ import Contact from "@/component/sections/Contact";
 import HeroSection from "@/component/sections/HeroSection";
 import Projects from "@/component/sections/Projects";
 import Services from "@/component/sections/Services";
+import Footer from "@/component/ui/Footer";
 import Header from "@/component/ui/Header";
 import Image from "next/image";
 
@@ -17,6 +18,7 @@ export default function Home() {
     <Client/>
     <Projects/>
     <Contact/>
+    <Footer/>
     </>
   );
 }

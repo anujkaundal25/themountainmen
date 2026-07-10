@@ -59,70 +59,140 @@ const servicesData = [
 
 export default function Services() {
   return (
-    <section className="bg-[#2d2d2d] text-white py-16 px-4 md:px-10 min-h-screen">
-      <div className="max-w-5xl mx-auto">
-        
-        {/* Top Header Centered */}
-        <div className="flex flex-col items-center text-center mb-12 border-b border-gray-800 pb-8">
-          <span className="text-orange-500 font-bold uppercase tracking-[3px] text-xs block mb-2">
-            WHAT WE DO
-          </span>
-          <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight max-w-xl leading-tight">
-            Film & Line Production Services In Uttarakhand
-          </h2>
-          <div className="w-12 h-[2.5px] bg-orange-500 mt-4" />
-        </div>
+    <section className="bg-[#1a1c1e] text-gray-100 py-24 px-4 md:px-8 lg:px-16 min-h-screen relative overflow-hidden" id='services'>
+      
+      {/* Editorial Watermark Text */}
+      <div className="absolute top-4 right-4 text-[12vw] font-black text-gray-800/10 select-none pointer-events-none tracking-tighter leading-none">
+        PRODUCTION
+      </div>
 
-        {/* 2-Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {servicesData.map((service, index) => {
-            const isLastItem = index === servicesData.length - 1;
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        
+        {/* --- STICKY LEFT COLUMN: TEXT INTRO --- */}
+        <div className="lg:col-span-4 lg:sticky lg:top-12 space-y-6">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-orange-500 uppercase">Services</span>
+            <div className="h-px bg-orange-500/30 flex-1"></div>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            Film & Line <br className="hidden lg:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-400">
+              Production
+            </span> <br />
+            Services.
+          </h2>
+          
+          <p className="text-sm text-gray-400 font-light leading-relaxed max-w-md">
+            We operate seamlessly across Uttarakhand, turning raw, rugged terrains into structured, efficient production sets. From logistics to location scouting, we manage the chaos so you can capture the magic.
+          </p>
+
+          <div className="pt-4">
+            {/* <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-500 border-b border-orange-500/30 pb-2 hover:border-orange-500 transition-all cursor-pointer">
+              Download Production Kit <span>↓</span>
+            </div> */}
+            {servicesData.slice(0,1).map((service, index) => {
             const IconComponent = service.icon;
 
             return (
               <div 
                 key={index}
-                // CHNAGES HERE: 'border border-gray-700/50' default ke liye aur 'group-hover:border-orange-500' dynamic orange border ke liye
-                className={`relative h-[240px] rounded-xl overflow-hidden shadow-xl group cursor-pointer bg-[#2d2d2d] border border-white/50 group-hover:border-orange-500 transition-all duration-500 ${
-                  isLastItem ? "md:col-span-2 max-w-xl mx-auto w-full" : ""
-                }`}
+                className="group relative h-[280px] bg-[#22252a] border border-gray-800 hover:border-orange-500/50 transition-all duration-500 flex flex-col justify-end p-6 overflow-hidden shadow-2xl"
               >
-                {/* Background Image */}
+                {/* Background Image Layer */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-0"
+                  className="absolute inset-0 bg-cover bg-center contrast-125 transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-5"
                   style={{ backgroundImage: `url(${service.image})` }}
                 />
 
-                {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-85 group-hover:opacity-0 transition-opacity duration-500 z-10" />
+                {/* Rich Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141619] via-[#141619]/70 to-transparent opacity-95 transition-opacity duration-500 z-10 group-hover:opacity-100" />
 
-                {/* Content Layer */}
-                <div className="absolute inset-0 z-20 p-5 flex flex-col justify-center items-center text-center h-full">
+                {/* Controlled Wrapper Box */}
+                <div className="relative z-20 w-full transition-all duration-500 transform translate-y-8 group-hover:translate-y-0">
                   
-                  {/* Dynamic Icon */}
-                  <div className="text-orange-500 text-3xl mb-3 transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
-                    <IconComponent />
+                  {/* Default State Header Block */}
+                  <div className="mb-4">
+                    <div className="inline-flex p-3 bg-orange-500 text-white text-xl mb-3 transition-all duration-500 group-hover:bg-transparent group-hover:text-orange-400 group-hover:p-0">
+                      <IconComponent />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white tracking-wide transition-colors duration-300 group-hover:text-orange-400">
+                      {service.title}
+                    </h3>
+                    
+                    <div className="w-0 h-0.5 bg-orange-500 mt-2 transition-all duration-500 group-hover:w-16" />
                   </div>
 
-                  {/* Service Title */}
-                  <h3 className="text-lg md:text-xl font-bold text-white tracking-wide transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
-                    {service.title}
-                  </h3>
-
-                  {/* Expandable Description Section on Hover */}
-                  <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[120px] group-hover:opacity-100 group-hover:mt-2">
-                    <p className="text-gray-300 text-xs md:text-sm leading-relaxed max-w-md line-clamp-3">
+                  {/* Revealing Content Block */}
+                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[140px] pt-1">
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">
                       {service.description}
                     </p>
                     
-                    {/* Read More Anchor */}
-                    <div className="mt-3 flex items-center justify-center gap-1.5 text-orange-500 font-semibold text-[11px] uppercase tracking-wider group/btn">
-                      <span>Read More</span>
-                      <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    <div className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-wider cursor-pointer">
+                      <span>Learn Logistics</span>
+                      <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </div>
 
                 </div>
+
+              </div>
+            );
+          })}
+          </div>
+        </div>
+
+        {/* --- RIGHT COLUMN: DYNAMIC GRID --- */}
+        <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {servicesData.slice(1,).map((service, index) => {
+            const IconComponent = service.icon;
+
+            return (
+              <div 
+                key={index}
+                className="group relative h-[280px] bg-[#22252a] border border-gray-800 hover:border-orange-500/50 transition-all duration-500 flex flex-col justify-end p-6 overflow-hidden shadow-2xl"
+              >
+                {/* Background Image Layer */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center contrast-125 transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-5"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
+
+                {/* Rich Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141619] via-[#141619]/70 to-transparent opacity-95 transition-opacity duration-500 z-10 group-hover:opacity-100" />
+
+                {/* Controlled Wrapper Box */}
+                <div className="relative z-20 w-full transition-all duration-500 transform translate-y-8 group-hover:translate-y-0">
+                  
+                  {/* Default State Header Block */}
+                  <div className="mb-4">
+                    <div className="inline-flex p-3 bg-orange-500 text-white text-xl mb-3 transition-all duration-500 group-hover:bg-transparent group-hover:text-orange-400 group-hover:p-0">
+                      <IconComponent />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white tracking-wide transition-colors duration-300 group-hover:text-orange-400">
+                      {service.title}
+                    </h3>
+                    
+                    <div className="w-0 h-0.5 bg-orange-500 mt-2 transition-all duration-500 group-hover:w-16" />
+                  </div>
+
+                  {/* Revealing Content Block */}
+                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[140px] pt-1">
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">
+                      {service.description}
+                    </p>
+                    
+                    <div className="inline-flex items-center gap-2 text-orange-500 font-bold text-xs uppercase tracking-wider cursor-pointer">
+                      <span>Learn Logistics</span>
+                      <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
             );
           })}
