@@ -39,7 +39,7 @@ function AboutUs() {
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <button className="group relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-xs font-bold uppercase tracking-wider text-gray-900 rounded-none group bg-gradient-to-br from-orange-500 to-amber-600 group-hover:from-orange-500 group-hover:to-amber-600 hover:text-white dark:text-white focus:ring-2 focus:outline-none focus:ring-orange-300">
-                <span className="relative px-6 py-3.5 transition-all ease-in duration-150 bg-white dark:bg-gray-900 rounded-none group-hover:bg-opacity-0">
+                <span className="relative px-6 py-3.5 transition-all ease-in duration-150  dark:bg-gray-900 rounded-none ">
                   Our Story
                 </span>
               </button>
